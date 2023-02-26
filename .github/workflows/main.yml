@@ -26,10 +26,6 @@ jobs:
       - name: Install APP dependencies
         run: npm install
         
-      - name: Limit heap test
-        env:
-          NODE_OPTIONS: "--max_old_space_size=4096"
-
       - name: Build Ionic APP
         run: ionic build --verbose
 
