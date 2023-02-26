@@ -27,7 +27,7 @@ jobs:
         run: npm install
 
       - name: Build Ionic APP
-        run: ionic build
+        run: ionic build --verbose
 
       - name: Generate Android  files
         run: ionic capacitor copy android
