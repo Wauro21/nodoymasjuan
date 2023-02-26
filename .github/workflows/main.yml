@@ -27,7 +27,7 @@ jobs:
         run: npm install
         
       - name: Build Ionic APP
-        run: ionic build --verbose
+        run: ionic --max_old_space_size=2048 build
 
       - name: Generate Android  files
         run: ionic capacitor copy android
