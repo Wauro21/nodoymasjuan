@@ -77,11 +77,6 @@ export default function Menu (){
 
     return(
         <IonFooter>
-            <IonToolbar
-                style={{
-                    'padding-bottom':'50px',
-                }}
-            >
                 {/* <IonButton
                     onClick={handleDrawer(true)}
                 >
@@ -96,6 +91,7 @@ export default function Menu (){
                     }}
                 />
                 <SwipeableDrawer
+                    variant="persistent"
                     anchor="bottom"
                     open= {drawer_status}
                     onClose={() => setDrawer(false)}
@@ -192,7 +188,6 @@ export default function Menu (){
                     <h1>WOWOWO CONTENT</h1>
 
                 </SwipeableDrawer>
-            </IonToolbar>
         </IonFooter>
     )
 }
