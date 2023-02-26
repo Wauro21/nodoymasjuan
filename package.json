@@ -9,6 +9,7 @@
     "@capacitor/app": "4.1.1",
     "@capacitor/camera": "^4.1.4",
     "@capacitor/core": "4.6.2",
+    "@capacitor/filesystem": "4.1.4",
     "@capacitor/haptics": "4.1.0",
     "@capacitor/ios": "4.6.2",
     "@capacitor/keyboard": "4.1.1",
@@ -31,8 +32,6 @@
     "@types/react-router": "^5.1.11",
     "@types/react-router-dom": "^5.1.7",
     "axios": "^1.2.3",
-    "cordova-plugin-file": "^7.0.0",
-    "cordova-plugin-file-opener2": "^3.0.5",
     "history": "^4.9.0",
     "ionicons": "^6.0.3",
     "jetifier": "^2.0.0",
@@ -89,7 +88,7 @@
     ]
   },
   "devDependencies": {
-    "@capacitor/cli": "4.6.3"
+    "@capacitor/cli": "4.6.2"
   },
   "description": "An Ionic project"
 }
