@@ -55,10 +55,12 @@ jobs:
         uses: actions/upload-artifact@v1
         with:
           name: app-dev
-          path: ${{ github.workspace }}/packages/app/android/app/build/outputs/bundle/release/*.apk
+          #path: ${{ github.workspace }}/packages/app/android/app/build/outputs/bundle/release/*.apk
+          run: ls
 
       - name: Upload release bundle
         uses: actions/upload-artifact@v1
         with:
           name: app-release
-          path: ${{ github.workspace }}/packages/app/android/app/build/outputs/bundle/release/*.aab
+          #path: ${{ github.workspace }}/packages/app/android/app/build/outputs/bundle/release/*.aab
+          run: ls
