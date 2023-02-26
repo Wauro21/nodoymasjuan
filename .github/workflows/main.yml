@@ -46,22 +46,22 @@ jobs:
           CI: ""
         run: ionic capacitor build android --release --prod 
 
+      - name: Generate the debug APK
+        working-directory: ./android/
+        run: ./gradlew assemble
       
       - name: Generate the Android App Bundle
         working-directory: ./android/
         run: ./gradlew bundle
-    
-      - name: debug
-        run: ls ./android/app/build
+  
+      - name: Upload dev APK
+        uses: actions/upload-artifact@v1
+        with:
+          name: app-dev
+          path: ./android/app/build/outputs/bundle/release/*.aab
 
-#      - name: Upload dev APK
-#        uses: actions/upload-artifact@v1
-#        with:
-#          name: app-dev
-#          path: android/apk/*.apk
-
-#      - name: Upload release bundle
-#        uses: actions/upload-artifact@v1
-#        with:
-#          name: app-release
-#          path: android/apk/*.aab
+      - name: Upload release bundle
+        uses: actions/upload-artifact@v1
+        with:
+          name: app-release
+          path: ./android/app/build/outputs/bundle/release/*.aab
