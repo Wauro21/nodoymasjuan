@@ -21,9 +21,9 @@ jobs:
           node-version: 16.x
 
       - name: Limit heap space
-        env:
-          NODE_OPTIONS: "--max_old_space_size=4096"
-        run: npm start
+        run: |
+          export NODE_OPTIONS="--max_old_space_size=4096"
+          npm start
       
 
       - name: Install IONIC
