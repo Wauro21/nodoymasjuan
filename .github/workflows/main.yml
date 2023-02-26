@@ -17,8 +17,8 @@ jobs:
 
       - name: Setup Node.js
         uses: actions/setup-node
-          with:
-            node-version: 16.x
+        with:
+          node-version: 16.x
 
       - name: Install IONIC
         run: npm install -g @ionic/cli
