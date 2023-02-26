@@ -55,7 +55,7 @@ jobs:
         run: ./gradlew bundle
   
       - name: debug again
-        run:  ls ./android/app/build/outputs/bundle/release/
+        run:  pwd ./android/app/build/outputs/bundle/release/
   
       - name: Upload dev APK
         uses: actions/upload-artifact@v1
