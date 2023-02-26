@@ -52,7 +52,7 @@ jobs:
         run: ./gradlew bundle
     
       - name: debug
-        run: ls ./android
+        run: ls ./android/app
 
 #      - name: Upload dev APK
 #        uses: actions/upload-artifact@v1
