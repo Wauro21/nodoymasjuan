@@ -53,9 +53,25 @@ jobs:
       - name: Generate the Android App Bundle
         working-directory: ./android/
         run: ./gradlew bundle
-  
-      - name: debug again
-        run:  pwd ./android/app/build/outputs/bundle/release/
+    
+      - name: Sign the release bundle
+        uses: r0adkll/sign-android-release@v1
+        with:
+          releaseDirectory: ./android/app/build/outputs/bundle/release
+          signingKeyBase64: ${{ secrets.ANDROIDKEYSTORE }}
+          alias: ${{ secrets.KEYSTOREALIAS }}
+          keyStorePassword: ${{ secrets.KEYSTOREPASS }}
+          keyPassword: ${{ secrets.KEYSTOREPASS }}
+      
+      - name: Sign the dev APK
+        uses: r0adkll/sign-android-release@v1
+        with:
+          releaseDirectory: ./android/app/build/outputs/apk/debug
+          signingKeyBase64: ${{ secrets.ANDROIDKEYSTORE }}
+          alias: ${{ secrets.KEYSTOREALIAS }}
+          keyStorePassword: ${{ secrets.KEYSTOREPASS }}
+          keyPassword: ${{ secrets.KEYSTOREPASS }}
+          
   
       - name: Upload Release APP
         uses: actions/upload-artifact@v3
