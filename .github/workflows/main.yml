@@ -57,14 +57,14 @@ jobs:
       - name: debug again
         run:  pwd ./android/app/build/outputs/bundle/release/
   
-      - name: Upload dev APK
-        uses: actions/upload-artifact@v3
-        with:
-          name: app-dev
-          path: ./android/app/build/outputs/bundle/release/*.aab
-
-      - name: Upload release bundle
+      - name: Upload Release APP
         uses: actions/upload-artifact@v3
         with:
           name: app-release
+          path: ./android/app/build/outputs/bundle/release/*.aab
+
+      - name: Upload dev APP
+        uses: actions/upload-artifact@v3
+        with:
+          name: app-dev
           path: ./android/app/build/outputs/apk/debug/*.apk
