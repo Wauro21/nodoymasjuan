@@ -13,8 +13,12 @@ jobs:
       - name: Checkout Source
         uses: actions/checkout@v3
 
-      - name: Test increment var
-        env:
-          build_s: ${GITHUB_REF#refs/*/}
-          build_n: ${build_s:5:3}
-        run: echo "The build string is $build_s \nThe build number is $build_n"
+      - name: Build String
+        run: echo "BUILD_STRING=${GITHUB_REF#refs/*/}" >> $GITHUB_ENV
+
+      - name: Build Number
+        run: echo "BUILD_NUMBER=${BUILD_STRING:5:3}" >> $GITHUB_ENV
+
+      - name: Display numbers
+        run: echo "Build string is ${{env.BUILD_STRING}} \nBuild number is ${{env.BUILD_NUMBER}}"
+
